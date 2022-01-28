@@ -11,7 +11,7 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to find location for weather ' + response.body.error.code + ' ' + response.body.error.type + ' ' + response.body.error.info, undefined )
         }else {
             callback(undefined, body.current.weather_descriptions[0] + ' throughout the day.  It is currently ' + body.current.temperature + ' degrees outside.  There is a ' + 
-            body.current.precip + '% chance of rain'  )
+            body.current.precip + '% chance of rain.  The humidity is ' + body.current.humidity + ' percent today.'  )
         }
     })
 }
